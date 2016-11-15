@@ -30,4 +30,5 @@ public class Parallax : MonoBehaviour {
 		}
 		previousCameraPosition = transform.position;
 	}
+	
 }

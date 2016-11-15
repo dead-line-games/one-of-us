@@ -3,7 +3,10 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	public float maxSpeed = 10f;
+	public float walkSpeed = 5f;
+	public float climbSpeed = 8f;
+	public bool onLadder = true;
+
 	bool facingRight = true;
 
 	Rigidbody2D physics;
@@ -13,11 +16,16 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		float move = Input.GetAxis ("Horizontal");
+		float horizontal = Input.GetAxis ("Horizontal");
+		float vertical = Input.GetAxis ("Vertical");
 
-		physics.velocity = new Vector2(move * maxSpeed, physics.velocity.y);
+		if (onLadder) {
+			physics.velocity = new Vector2(physics.velocity.x, vertical * climbSpeed);
+		} else {
+			physics.velocity = new Vector2(horizontal * walkSpeed, physics.velocity.y);
+		}
 
-		if ((move > 0 && !facingRight) || (move < 0 && facingRight)) {
+		if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
 			Flip ();
 		}
 	}
@@ -28,4 +36,5 @@ public class PlayerController : MonoBehaviour {
 		scale.x *= -1;
 		transform.localScale = scale;
 	}
+	
 }
