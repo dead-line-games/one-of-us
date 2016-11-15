@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface: IUseable {
+public interface IUseable {
 	void Use();
 }

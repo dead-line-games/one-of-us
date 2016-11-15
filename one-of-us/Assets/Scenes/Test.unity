@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5069d58b780904fd299545f2fda2a0b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
+  walkSpeed: 3
   climbSpeed: 8
   onLadder: 1
 --- !u!1 &577574220
@@ -569,7 +569,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 283657cf8decb354180796c6ce88b1e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -581,8 +581,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974278758}
   m_LocalRotation: {x: -0, y: -0, z: 0.020024167, w: -0.9997995}
-  m_LocalPosition: {x: 5, y: 0.71, z: 0}
-  m_LocalScale: {x: 2.086209, y: 2.6632693, z: 1}
+  m_LocalPosition: {x: 4.75, y: 0.44, z: 0}
+  m_LocalScale: {x: 1.614254, y: 2.4713314, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.2280002}
   m_Children: []
   m_Father: {fileID: 0}
@@ -767,7 +767,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1552569166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.58, y: 3.07, z: 0}
+  m_LocalPosition: {x: 11.06, y: 0.35, z: 0}
   m_LocalScale: {x: 1.7313913, y: 1.5558572, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
