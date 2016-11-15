@@ -6,18 +6,14 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed = 10f;
 	bool facingRight = true;
 
-	Animator animator;
 	Rigidbody2D physics;
 
 	void Start () {
-		animator = GetComponent<Animator> ();
 		physics = GetComponent<Rigidbody2D>();
 	}
-		
+
 	void FixedUpdate () {
 		float move = Input.GetAxis ("Horizontal");
-
-		animator.SetFloat ("speed", Mathf.Abs (move));
 
 		physics.velocity = new Vector2(move * maxSpeed, physics.velocity.y);
 
