@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ladder : MonoBehaviour, IUseable {
 
-	void Use() {
+	public void Use() {
 
 	}
 
@@ -14,5 +14,5 @@ public class Ladder : MonoBehaviour, IUseable {
 	void Update () {
 
 	}
-	
+
 }
