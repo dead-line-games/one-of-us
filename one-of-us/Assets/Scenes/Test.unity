@@ -386,6 +386,8 @@ MonoBehaviour:
   walkSpeed: 3
   climbSpeed: 8
   onLadder: 1
+  jumpHeight: 4
+  maxJump: 1
 --- !u!1 &577574220
 GameObject:
   m_ObjectHideFlags: 0
