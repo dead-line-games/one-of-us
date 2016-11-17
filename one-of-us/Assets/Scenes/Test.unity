@@ -371,7 +371,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &303353019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,9 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   climbSpeed: 8
-  onLadder: 1
-  jumpHeight: 4
-  maxJump: 1
+  jumpHeight: 5
 --- !u!1 &577574220
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +460,7 @@ GameObject:
   - 61: {fileID: 742486834}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -722,6 +720,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1552569168}
   - 212: {fileID: 1552569167}
+  - 61: {fileID: 1552569169}
   m_Layer: 0
   m_Name: ground
   m_TagString: Untagged
@@ -775,6 +774,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!61 &1552569169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552569166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 8.6, y: 1}
 --- !u!1 &1601466703
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +896,7 @@ MonoBehaviour:
   - {fileID: 140967243}
   - {fileID: 577574222}
   - {fileID: 1281920574}
-  smoothing: 100
+  smoothing: 90
 --- !u!114 &1601466710
 MonoBehaviour:
   m_ObjectHideFlags: 0

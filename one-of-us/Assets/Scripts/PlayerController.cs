@@ -5,39 +5,37 @@ public class PlayerController : MonoBehaviour {
 
 	public float walkSpeed = 5f;
 	public float climbSpeed = 8f;
-	public bool onLadder = false;
+	public int jumpHeight = 5;
 
-	bool facingRight = true;
+	private bool jumping = false;
+	private bool climbing = false;
+
+	private bool facingRight = true;
 
 	Rigidbody2D physics;
 
-  public int jumpHeight;
-  public int maxJump;
-  private int jumpNum;
-
 	void Start () {
 		physics = GetComponent<Rigidbody2D>();
-    jumpNum = 0;
 	}
 
 	void FixedUpdate () {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical");
 
-		if (Input.GetKeyDown (KeyCode.Space) && (jumpNum<maxJump)) {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, jumpHeight);
-			jumpNum++;
+		if (Input.GetKeyDown (KeyCode.Space) && !jumping) {
+			physics.velocity = new Vector2 (0, jumpHeight);
+			jumping = true;
 		}
 
-		// if (onLadder) {
-		// 	physics.velocity = new Vector2(physics.velocity.x, vertical * climbSpeed);
-		// } else {
-		physics.velocity = new Vector2(horizontal * walkSpeed, physics.velocity.y);
-		// }
-
-		if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
-			Flip ();
+		if (climbing) {
+			physics.velocity = new Vector2(physics.velocity.x, vertical * climbSpeed);
+		} else {
+			physics.velocity = new Vector2(horizontal * walkSpeed, physics.velocity.y);
+			if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
+				Flip ();
+			}
 		}
+
 	}
 
 	void Flip () {
@@ -49,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 
   void OnCollisionEnter2D (Collision2D call) {
     if (call.gameObject.CompareTag("Ground")) {
-      jumpNum = 0;
+			jumping = false;
     }
   }
 
