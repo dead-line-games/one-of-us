@@ -33,15 +33,9 @@ public class PlayerController : MonoBehaviour {
 			jumping = true;
 		}
 
-		if (climbing) {
-			physics.gravityScale = 0;
-			physics.velocity = new Vector2(physics.velocity.x, vertical * climbSpeed);
-		} else {
-			physics.gravityScale = 1;
-			physics.velocity = new Vector2(horizontal * walkSpeed, physics.velocity.y);
-			if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
-				Flip ();
-			}
+		physics.velocity = new Vector2(horizontal * walkSpeed, physics.velocity.y);
+		if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
+			Flip ();
 		}
 	}
 
