@@ -1,15 +1,20 @@
 fileFormatVersion: 2
-guid: be22b3c699df2494c84221c9a3d87c8a
-timeCreated: 1480474438
+guid: 58305242ce855074d9687826dff25317
+timeCreated: 1481176913
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SPRITE WALKING SEQUENCE_0
-    21300002: SPRITE WALKING SEQUENCE_1
-    21300004: SPRITE WALKING SEQUENCE_2
-    21300006: SPRITE WALKING SEQUENCE_3
-    21300008: SPRITE WALKING SEQUENCE_4
-    21300010: SPRITE WALKING SEQUENCE_5
+    21300000: Run_0
+    21300002: Run_1
+    21300004: Run_2
+    21300006: Run_3
+    21300008: Run_4
+    21300010: Run_5
+    21300012: Run_6
+    21300014: Run_7
+    21300016: Run_8
+    21300018: Run_9
+    21300020: Run_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,78 +64,143 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SPRITE WALKING SEQUENCE_0
+      name: Run_0
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1062
-        width: 144
-        height: 496
+        x: 80
+        y: 1034
+        width: 338
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SPRITE WALKING SEQUENCE_1
+      name: Run_1
       rect:
         serializedVersion: 2
-        x: 415
-        y: 1059
-        width: 209
-        height: 494
+        x: 548
+        y: 982
+        width: 283
+        height: 495
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SPRITE WALKING SEQUENCE_2
+      name: Run_2
       rect:
         serializedVersion: 2
-        x: 705
-        y: 1061
-        width: 327
-        height: 500
+        x: 977
+        y: 962
+        width: 206
+        height: 543
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SPRITE WALKING SEQUENCE_3
+      name: Run_3
       rect:
         serializedVersion: 2
-        x: 1146
-        y: 1058
-        width: 140
-        height: 506
+        x: 1327
+        y: 967
+        width: 216
+        height: 544
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SPRITE WALKING SEQUENCE_4
+      name: Run_4
       rect:
         serializedVersion: 2
-        x: 1448
-        y: 1059
+        x: 83
+        y: 373
+        width: 364
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Run_5
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 851
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Run_6
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 848
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Run_7
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 850
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Run_8
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 342
+        width: 266
+        height: 521
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Run_9
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 312
         width: 225
-        height: 493
+        height: 533
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SPRITE WALKING SEQUENCE_5
+      name: Run_10
       rect:
         serializedVersion: 2
-        x: 1750
-        y: 1062
-        width: 324
-        height: 480
+        x: 972
+        y: 333
+        width: 207
+        height: 518
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

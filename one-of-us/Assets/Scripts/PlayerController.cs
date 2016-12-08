@@ -3,9 +3,9 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	public float walkSpeed = 5f;
+	public float maxSpeed = 7f;
 	public float climbSpeed = 8f;
-	public int jumpHeight = 6;
+	public int jumpHeight = 10;
 
 	private bool jumping = false;
 	private bool climbing = false;
@@ -15,16 +15,18 @@ public class PlayerController : MonoBehaviour {
 	private IUseable useable;
 
 	Rigidbody2D physics;
+	Animator animator;
 
 	void Start () {
 		physics = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
 	}
 
 	void FixedUpdate () {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical");
 
-		if (Input.GetKeyUp (KeyCode.LeftShift)) {
+		if (Input.GetKeyUp (KeyCode.E)) {
 			Use();
 		}
 
@@ -33,7 +35,9 @@ public class PlayerController : MonoBehaviour {
 			jumping = true;
 		}
 
-		physics.velocity = new Vector2(horizontal * walkSpeed, physics.velocity.y);
+		animator.SetFloat("speed", Mathf.Abs(horizontal));
+
+		physics.velocity = new Vector2(horizontal * maxSpeed, physics.velocity.y);
 		if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
 			Flip ();
 		}
