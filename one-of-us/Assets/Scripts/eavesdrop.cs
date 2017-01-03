@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ea : MonoBehaviour {
+public class Eavesdrop : MonoBehaviour {
     public GameObject target;
     public GameObject npc;
     public int max;
