@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space) && !jumping) {
 			physics.velocity = new Vector2 (0, jumpHeight);
+			animator.SetBool("isJumping", true);
 			jumping = true;
 		}
 
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour {
   void OnCollisionEnter2D (Collision2D other) {
 		switch (other.gameObject.tag) {
 			case "Ground":
+				animator.SetBool("isJumping", false);
 				jumping = false;
 				break;
 		}
