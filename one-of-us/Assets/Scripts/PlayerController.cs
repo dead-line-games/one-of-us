@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour {
 	public float climbSpeed = 8f;
 	public int jumpHeight = 10;
 
+	public bool hidden = false;
+
 	private bool jumping = false;
 	private bool climbing = false;
-
 	private bool facingRight = true;
 
 	private IUseable useable;
@@ -30,18 +31,21 @@ public class PlayerController : MonoBehaviour {
 			Use();
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && !jumping) {
-			physics.velocity = new Vector2 (0, jumpHeight);
-			animator.SetBool("isJumping", true);
-			jumping = true;
+		if (!hidden) {
+			if (Input.GetKeyDown (KeyCode.Space) && !jumping) {
+				physics.velocity = new Vector2 (0, jumpHeight);
+				jumping = true;
+			}
+
+			physics.velocity = new Vector2(horizontal * maxSpeed, physics.velocity.y);
+			if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
+				Flip ();
+			}
 		}
 
+		animator.SetBool("isHidden", hidden);
+		animator.SetBool("isJumping", jumping);
 		animator.SetFloat("speed", Mathf.Abs(horizontal));
-
-		physics.velocity = new Vector2(horizontal * maxSpeed, physics.velocity.y);
-		if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
-			Flip ();
-		}
 	}
 
 	public void ToggleClimbing() {
@@ -73,7 +77,7 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		switch (other.gameObject.tag) {
 			case "Useable":
-				useable = other.gameObject.GetComponent<IUseable>();
+				useable = other.gameObject.GetComponent<IUseable> ();
 				break;
 		}
   }
