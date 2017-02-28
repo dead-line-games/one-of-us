@@ -9,11 +9,11 @@ public class CameraFollow : MonoBehaviour {
 
 	void Start () {
 		target = targetObject.transform;
-		transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+		transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
 	}
 
 	void LateUpdate () {
-		Vector3 specificVector = new Vector3(target.position.x, target.position.y, transform.position.z);
+		Vector3 specificVector = new Vector3(target.position.x, transform.position.y, transform.position.z);
    	transform.position = Vector3.Lerp(transform.position, specificVector, dampTime * Time.deltaTime);
 	}
 
