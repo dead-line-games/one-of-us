@@ -3,20 +3,18 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
 
-	public float xMin, xMax, yMin, yMax;
-
+	public float dampTime = 1f;
+	public GameObject targetObject;
 	private Transform target;
 
 	void Start () {
-		target = GameObject.Find ("Player").transform;
+		target = targetObject.transform;
+		transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
 	}
 
 	void LateUpdate () {
-		transform.position = new Vector3 (
-			Mathf.Clamp (target.position.x, xMin, xMax),
-			Mathf.Clamp (target.position.y, yMin, yMax),
-			transform.position.z
-		);
+		Vector3 specificVector = new Vector3(target.position.x, target.position.y, transform.position.z);
+   	transform.position = Vector3.Lerp(transform.position, specificVector, dampTime * Time.deltaTime);
 	}
-	
+
 }
