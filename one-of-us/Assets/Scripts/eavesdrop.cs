@@ -1,52 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Eavesdrop : MonoBehaviour {
-    public GameObject target;
-    public GameObject npc;
-    public int max;
-    public int min;
-    private Vector2 tran;
-    float timeLeft;
-    
+  public float detectionTime = 20.0f;
+  private float timeLeft;
+  private bool detected = false;
+
 
 	// Use this for initialization
 	void Start () {
-        target= GameObject.FindWithTag("Player");
-        npc = GameObject.FindWithTag("NPC");
-        tran = target.transform.position;
-        timeLeft = 20.0f;
+      timeLeft = detectionTime;
+  }
 
-
-    }
-	
 	// Update is called once per frame
 	void Update () {
-        bool checkR = CheckRange();
-        if (checkR)
-        {
-            return;
+    if (detected) {
+        Debug.Log(timeLeft);
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0) {
+          SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else
-        {
-            timeLeft -= Time.deltaTime;
-            if (timeLeft < 0)
-            {
-                Application.Quit(); // should have an end game screen here, use quit as a sub for now
-            }
-        }
-	
+    }
 	}
 
-    bool CheckRange()
-    {
-        if ((Vector2.Distance(npc.transform.position, target.transform.position)<max)&& (Vector2.Distance(npc.transform.position, target.transform.position) > min))
-        {
-            return true;
-        }
-        return false;
+  void OnTriggerEnter2D (Collider2D other) {
+    if (other.gameObject.tag == "Player") {
+      detected = true;
     }
+  }
 
-   
+  void OnTriggerExit2D (Collider2D other) {
+    if (other.gameObject.tag == "Player") {
+      detected = false;
+    }
+  }
 
 }
