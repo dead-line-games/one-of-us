@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class Eavesdrop : MonoBehaviour {
-  public float detectionTime = 20.0f;
+  public float detectionTime = 5.0f;
   private float timeLeft;
   private bool detected = false;
 
@@ -16,7 +16,6 @@ public class Eavesdrop : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
     if (detected) {
-        Debug.Log(timeLeft);
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0) {
           SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -33,6 +32,7 @@ public class Eavesdrop : MonoBehaviour {
   void OnTriggerExit2D (Collider2D other) {
     if (other.gameObject.tag == "Player") {
       detected = false;
+      timeLeft = detectionTime;
     }
   }
 
