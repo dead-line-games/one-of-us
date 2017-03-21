@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour {
 
-	public BoxCollider2D collider;
+	public BoxCollider2D platformCollider;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +17,11 @@ public class Platform : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
-		Physics2D.IgnoreCollision(other.GetComponent<BoxCollider2D>(), collider);
+		Physics2D.IgnoreCollision(other.GetComponent<BoxCollider2D>(), platformCollider);
 	}
 
 	void OnTriggerExit2D (Collider2D other) {
-		Physics2D.IgnoreCollision(other.GetComponent<BoxCollider2D>(), collider, false);
+		Physics2D.IgnoreCollision(other.GetComponent<BoxCollider2D>(), platformCollider, false);
 	}
 
 }

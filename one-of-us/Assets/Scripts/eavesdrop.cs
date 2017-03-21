@@ -8,20 +8,20 @@ public class Eavesdrop : MonoBehaviour {
   private bool detected = false;
 
 
-	// Use this for initialization
-	void Start () {
+  // Use this for initialization
+  void Start () {
       timeLeft = detectionTime;
   }
 
-	// Update is called once per frame
-	void Update () {
+  // Update is called once per frame
+  void Update () {
     if (detected) {
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0) {
           SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-	}
+  }
 
   void OnTriggerEnter2D (Collider2D other) {
     if (other.gameObject.tag == "Player") {

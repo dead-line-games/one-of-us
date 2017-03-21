@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 95712547294457936}
   - component: {fileID: 114079193837105086}
   - component: {fileID: 61581995013073224}
+  - component: {fileID: 114866383874849684}
+  - component: {fileID: 114350378997327588}
   m_Layer: 9
   m_Name: NPC 1
   m_TagString: Player
@@ -64,7 +66,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61565856002928886
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -122,6 +124,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionTime: 5
+--- !u!114 &114350378997327588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1881278861830332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11823f2ce19d26240a44191db0ecb298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  maxSpeed: 5
+--- !u!114 &114866383874849684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1881278861830332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11823f2ce19d26240a44191db0ecb298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  maxSpeed: 5
 --- !u!212 &212172384828565206
 SpriteRenderer:
   m_ObjectHideFlags: 1
